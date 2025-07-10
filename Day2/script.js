@@ -318,3 +318,53 @@ let str = "    wefDFHsd fghj sdfg   eman    ";
 // console.log(Math.random()); // return a random number between 0 and 1
 // console.log(Math.floor(Math.random()*10));  // form max 0 : 10
 // console.log(Math.floor(Math.random()*(10-3)+3));  //between 3 and 10 // min and max
+
+
+
+/*
+task 6 solution
+• Apply the functionality of arr.indexOf(element) function but want to return all
+positions of the element.
+• Example:
+let arr = [10,80,60,15,10,3, 6,10]; // Output: position at [0, 4,7 ]
+*/
+
+// solution
+let num = 10;
+let arr = [10, 30, 40,10, 4, 30, 10];
+let start = 0;
+let positions = [];
+
+for(let i = 0; i< arr.length; start++){
+  console.log('i: ', i);
+  
+    let pos = arr.indexOf(num, start);
+    if(pos == -1){
+        break;
+    }else{
+      positions.push(pos);
+      start = pos ;
+    }
+}
+
+
+// another solution
+while(start < arr.length){
+  let pos = arr.indexOf(num, start);
+  if(pos == -1){
+    break;
+  }else{
+    positions.push(pos);
+    start = pos + 1;
+  }
+}
+
+// another solution
+let position = arr.indexOf(num, startIndex);
+let positionsList = [];
+while(position!=-1){
+  positionsList.push(position);
+  position = arr.indexOf(num, position + 1);
+
+}
+console.log("positions: ", positions);
